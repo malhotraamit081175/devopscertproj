@@ -1,8 +1,8 @@
-from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
 #url = 'https://github.com/'
-url ='http://172.31.33.189'
+url = 'http://13.232.197.187'
 
 options = Options()
 options.add_argument("--headless")
@@ -17,12 +17,22 @@ options.add_argument("--disable-dev-shm-usage")
 
 driver = webdriver.Chrome(options=options)
 
-#Navigate to github.com
+#Navigate to website pointed by URL
 driver.get(url)
 
 #Extract the top heading from github.com
 #text = driver.find_element_by_class_name('h000-mktg').text
-#text = driver.find_element_by_class_name('HeaderMenu-summary').text
-text = driver.find_element_by_id('About Us').text
+#text = driver.find_element_by_class_name('HeaderMenu-summary').textContent
+#text = driver.find_element_by_class_name('HeaderMenu-link').text
+aboutusElement=driver.find_element_by_id('About Us')
+driver.find_element_by_id('About Us').click()
+strFirstParagraph = driver.find_element_by_id('PID-ab2-pg').text
+strSecondParagraph = driver.find_element_by_xpath('/html/body/p[2]').text
 
-print(text)
+
+#print(text)
+print(aboutusElement)
+print('First Paragraph')
+print(strFirstParagraph)
+print('Second Paragraph')
+print(strSecondParagraph)
