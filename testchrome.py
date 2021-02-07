@@ -2,7 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 #url = 'https://github.com/'
-url = 'http://13.232.197.187'
+#url = 'http://13.232.197.187'
+url = 'http://localhost'
 
 options = Options()
 options.add_argument("--headless")
